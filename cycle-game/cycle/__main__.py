@@ -20,7 +20,7 @@ def main():
     
     cast = Cast()
     cast.add_actor("foods", Food())
-    cast.add_actor("cycles", Cycle(constants.PINK))
+    cast.add_actor("cycles", Cycle(constants.RED))
     cast.add_actor("cycles", Cycle(constants.CYAN))
     cast.add_actor("scores", Score(Point(100, 0), "Player One"))
     cast.add_actor("scores", Score(Point(700, 0), "Player Two"))

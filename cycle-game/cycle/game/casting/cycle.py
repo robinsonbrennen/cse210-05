@@ -4,15 +4,7 @@ from game.shared.point import Point
 
 
 class Cycle(Actor):
-    """
-    An object that leaves a trail behind it.
-    
-    The responsibility of Cycle is to move itself.
 
-    Attributes:
-        _cycle_color: The assigned color of the cycle
-        _segments: A cycle trail 
-    """
     def __init__(self, color):
         super().__init__()
         self._cycle_color = color
@@ -20,7 +12,6 @@ class Cycle(Actor):
         self._prepare_body()
         
     def get_segments(self):
-        """get the cycle segments as a list"""
         return self._segments
 
     def move_next(self):
@@ -35,11 +26,9 @@ class Cycle(Actor):
             trailing.set_velocity(velocity)
 
     def get_head(self):
-        """get the cycle head"""
         return self._segments[0]
 
     def grow_tail(self, number_of_segments):
-        """Append segments to the trail"""
         for i in range(number_of_segments):
             tail = self._segments[-1]
             velocity = tail.get_velocity()
@@ -60,12 +49,6 @@ class Cycle(Actor):
         x = 0.0
         y = 0.0
 
-        # if self._cycle_color == constants.RED:
-        #     x = int(constants.MAX_X / 6)
-        #     y = int(constants.MAX_Y / 6)
-        # else:
-        #     x = int(constants.MAX_X / 3)
-        #     y = int(constants.MAX_Y / 3)
         if self._cycle_color == constants.CYAN:
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
